@@ -1,0 +1,21 @@
+<div class="container mx-auto mt-4 mb-4">
+<h1>Lista de Personajes</h1>
+</div>
+
+
+  
+    <div class="row">
+        <% @characters.each do |character| %>
+            <div class="col-md-3 ">
+                <div class="card my-2 border p-1 shadow" style="width: 18rem; height: 13rem">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= character.name %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Location: <%= character.location %></h6>
+                        <hr>
+                        <h6 class="card-subtitle mb-2 text-muted">House: </h6>
+                        <p class="card-text"><%= character.house %></p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
