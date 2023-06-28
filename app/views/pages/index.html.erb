@@ -1,21 +1,25 @@
-<div class="container mx-auto mt-4 mb-4">
-<h1>Lista de Personajes</h1>
+<div class="container mx-auto mb-4 title d-grid">
+<h1>Personajes</h1>
 </div>
 
 
   
-    <div class="row container justify-content-center m-0">
+    <div class="row container-fluid justify-content-center m-0">
         <% @characters.each do |character| %>
-            <div class="col-md-4 ">
-                <div class="card my-2 border p-1 shadow" style="width: 18rem; height: 13rem">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= character.name %></h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Location: <%= character.location %></h6>
-                        <hr>
-                        <h6 class="card-subtitle mb-2 text-muted">House: </h6>
-                        <p class="card-text"><%= character.house %></p>
+            <div class="card me-5 info shadow <%= character.house %>">
+                <div class="row">
+                    <div class="col-sm-2 p-0">
+                        <%= image_tag "#{character.house}.png", class:"card-img-top " %>
                     </div>
-                </div>
+                    <div class="col-sm-9">
+                        <div class="card-block pt-1">
+                            <h5 class="card-title m-0"><%= character.name %></h5>
+                            <hr>
+                            <h6 class="card-subtitle mb-2 ">Location: <%= character.location %></h6>
+                            <h6 class="card-subtitle mb-2 ">House: <%= character.house %></h6>                      
+                        </div>
+                    </div>
+                 </div>
             </div>
         <% end %>
     </div>
