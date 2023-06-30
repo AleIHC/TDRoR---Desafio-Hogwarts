@@ -4,7 +4,8 @@
 
 
   
-    <div class="row container-fluid justify-content-center m-0">
+    <div class="container-fluid justify-content-center m-0">
+        <div class="row">
         <% @characters.each do |character| %>
             <div class="card me-5 info shadow <%= character.house %>">
                 <div class="row">
@@ -22,4 +23,5 @@
                  </div>
             </div>
         <% end %>
+        </div>
     </div>
